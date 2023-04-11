@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:
+        border-box;
+    text-decoration: none;
+    font-family:
+        'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(img/1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #a1e1dc !important;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #ed8b9e;
+}
+
+#petbtn {
+    position: fixed;
+    left: 0%;
+    top: 88%;
+}
+
+.id {
+    background-color: gray;
+    position: absolute;
+    
+}
+/*걍해본거*/
+/* .navigation a::before {
+    content: '|'; position: absolute; left: -35%; top: 00%; 
+} */
+/*댕근 게시글 높이 조절 */
+article {
+    margin-top: 8% ;
+}
+#btn-wright {
+    color: #242323;
+    font-size: smaller;
+    position: absolute; top: 16.15%;
+    width: 100px;
+    height: 35px;
+    margin: 0 auto;
+    left: 75%;
+    background-color: #a1e1dc;
+    border: none;
+}
+.form-select {
+    position: sticky;
+    width: 150px !important; height: 33px;
+    margin: 0%;
+    top: 8% auto; left: 65%;
+}
+
+#dangguen-head {
+    background-color: #ed8b9e;
+    color: #FFF;
+    position: absolute; top: 15% ;
+    width: 1220px ; height: auto;
+    margin: 0 auto;
+    left: 18%;
+    border: #ed8b9e;
+    
+}
+.d-grid.gap-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 10%;
+  }
+    
+
+.caremain {
+    position: relative;
+}
+
+.care-img {
+    display: block;
+    margin: auto;
+    top: 20%;
+}
+
+#care-text {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+}
+
+/*댕댕케어 슬라이드 */
+.typewriter-effect {
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    
+  }
+  
+  .typewriter-effect > .text {
+    max-width: 0;
+    animation: typing 5s steps(var(--characters)) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFF;
+    background-color: #070707af;
+  }
+  
+  .typewriter-effect::after {
+    size: 5em;
+    content: " |";
+    animation: blink 1s infinite;
+    animation-timing-function: step-end;
+  }
+  
+  @keyframes typing {
+    75%,
+    100% {
+      max-width: calc(var(--characters) * 1ch);
+    }
+  }
+  
+  @keyframes blink {
+    0%,
+    75%,
+    100% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+  }
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+
+
+/*구내비바*/
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.btnLogin-popup {   /*로그인버튼 마우스오버 전*/
+    width: 60px;
+    height: 25px;
+    background: transparent;
+    border: 1.9px solid #fff;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #ed8b9e;     /*로그인 버튼 마우스오버*/
+}
+
+.wrapper {
+    position: fixed ;
+    top: 25%;
+    width: 440px;
+    height: 440px;
+    background: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease, height 0.2s ease;
+}
+
+.wrapper.active {   /*회원가입창*/
+    height: 600px;
+    width: 800px;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box.login {
+    transform: translateX(0);
+    transition: transform 0.18s ease;
+}
+
+.wrapper.active .form-box.login {   /*로그인창에서 회원가입창 넘어가는*/
+    transition: none;
+    transform: translateX(-1000px);
+}
+
+.form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+    transition: none;
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+    transition: transform 0.18s ease;
+}
+
+.icon-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #84d3ce;    /*로그인창 X부분*/
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #84d3ce;     /*LOGIN*/
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    border-bottom: 2px solid #ed8b9e;   /*로그인창 입력 줄*/
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #ed8b9e;     /*ID PW */
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+ 
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #ed8b9e;     /*?이게 뭔가요 아직 알수 없읍니다*/
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #ed8b9e;     /*로그인입력칸 이모지*/
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 0.9em;
+    color: #84d3ce;     /*동의 체크 텍스트*/
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #84d3ce;      /*로그인 체크박스 배경색*/
+    margin-right: 6px;
+}
+
+.remember-forgot a {
+    color: #84d3ce;
+}
+
+
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #84d3ce;    /*로그인창에서 로그인 버튼 배경색*/
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: 0.9em;
+    color: #84d3ce;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #84d3ce;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.idcard {
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    border: 3px solid gray;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.idcard > div {
+    border: 1px solid gray;
+}
+
+.idcard-header {
+    background-color: #ed8b9e;
+    flex-basis: 15%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.idcard-header > div {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.idcard-header > div:first-child {
+    flex-basis: 30%;
+}
+
+.idcard-header > div:first-child > input {
+    size: 100px;
+    position: relative;
+    left: 20px;
+}
+
+.idcard-header > div:last-child {
+    flex-basis: 70%;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.idcard-body {
+    flex-grow: 1;
+    display: flex;
+}
+
+.idcard-body > div {
+    height: 100%;
+}
+
+.idcard-body > div:first-child{
+    border: 1px solid gray;
+    flex-basis: 30%;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.idcard-body > div:first-child > input {
+    width: 100%;
+    height: 100%;
+}
+
+.idcard-body > div:last-child{
+    flex-basis: 70%;
+    line-height: 30px;
+    padding-top: 10px;
+}
+
+.idcard-body > div:last-child > input:first-child {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+}
+
+.idcard-body .attiribute {
+    display: inline-block;
+    width: 70px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#주소 {
+    width: 425px;
+}
+
+#특징 {
+    width: 500px;
+    height: 100px;
+    position: relative;
+}
+
+.idcard-footer {
+    background-color: #ed8b9e;
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.idcard-footer > div {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#idcard-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#출력 {
+    margin: 20px 0 0 auto;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#출력:hover {
+    color: white;
+    background-color: skyblue;
+} 
+
+#수정 {
+    margin: 20px 0 0 auto;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+#수정:hover {
+    color: white;
+    background-color: skyblue;
+} 
